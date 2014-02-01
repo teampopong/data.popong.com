@@ -1,0 +1,295 @@
+// LESS
+
+
+// ----- variables ------------------------------------------------
+
+@bg_color           : white;
+@font_color         : #222;
+@link_color         : #08c;
+@hover_color        : #005580;
+@header_color       : rgba(255, 255, 255, 0.85);
+@footer_color       : #32302b;
+@footer_link_color  : #aaa69d;
+@footer_hover_color : #f1f0ef;
+@border_color       : #eee;
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+// ----- mixins --------------------------------------------------
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.box-shadow {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.33);
+}
+
+.transition {
+  transition: height 0.5s ease;
+  -webkit-transition: height 0.5s ease;
+  -moz-transition: height 0.5s ease;
+}
+.circular-image img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.gray {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.opaque {
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* msie */
+}
+
+
+// ----- common ---------------------------------------------------
+body {
+  background-color: @bg_color;
+  color: @font_color;
+  font-family: calibri, 'Nanum Gothic', sans-serif;
+  font-size: 12pt;
+}
+
+a {
+  color: @link_color;
+  &:hover {
+  color: @hover_color;
+  }
+}
+
+h2 {
+  font-size: 36pt;
+}
+
+span {
+  display: inline-block;
+}
+
+
+// ----- layout.html ---------------------------------------------------
+
+.logo {
+  height: 120px;
+  margin: -10px 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: @header_color;
+  border-bottom: 1px solid #ccc;
+  .box-shadow;
+  z-index: 1;
+
+  .container {
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    .transition;
+
+    &.large {
+      height: 100px;
+    }
+  }
+
+  #menu {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    li {
+      display: inline-block;
+      font-family: 'Raleway', sans-serif;
+
+      &.active {
+        background: rgba(242, 242, 242, 0.8);
+      }
+
+      a {
+        color: @font_color;
+        font-size: 16pt;
+
+        &:hover {
+          background: rgba(242, 242, 242, 0.8);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: @footer_color;
+  border-top: 1px solid @border_color;
+  color: #ddd;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 20px 20px 30px;
+  a {
+    color: @footer_link_color;
+    text-transform: capitalize;
+    &:hover {
+      color: @footer_hover_color;
+      text-decoration: none;
+    }
+  }
+  h3 {
+    border-bottom: 1px solid #3e3c36;
+    font-size: 14px;
+  }
+  .links a {
+    display: block;
+  }
+}
+
+
+// ----- pages ---------------------------------------------------
+
+.page {
+  padding: 3em 0;
+  border-top: 1px solid @border_color;
+
+  &:first-child {
+    margin-top: 20%;
+    border-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 60px;
+  }
+}
+
+.page-title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.beginning {
+  padding: 7em 0;
+}
+
+// intro.html
+#sociallinks {
+  margin-top: 40px;
+  #fb {
+    margin: 0 5px;
+    width: 76px;
+  }
+  #tw {
+    margin: 0 5px;
+    display: inline-block;
+  }
+}
+
+.hero-unit {
+  background-image: url('../images/main.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  border: solid 3px white;
+  text-align: center;
+}
+
+// participate.html
+#donation-widgets {
+  width: 348px;
+  margin: 0 auto;
+
+  div#paypal,
+  div#gittip {
+    border: 2px solid #EEE;
+    border-radius: 6pt;
+    display: inline-block;
+    height: 75px;
+    margin: 3px;
+    vertical-align: middle;
+    width: 160px;
+
+    .gittip-widget {
+      margin: auto;
+      border: none;
+      display: block;
+      background-position: right bottom;
+      width: 140px;
+    }
+
+    form {
+      margin: 10px 7px;
+    }
+  }
+}
+
+
+// ----- media ---------------------------------------------------
+
+@media (max-width: 980px) {
+  .page {
+    padding: 6em 10px;
+
+    &:first-child {
+    margin-top: 40%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding: 1em 10px 0;
+  }
+  .beginning {
+    padding-top: 3em;
+  }
+  header .container {
+    height: 40px;
+
+    &.large {
+      height: 60px;
+    }
+  }
+
+  #menu li a {
+    font-size: 12pt;
+  }
+
+  .logo {
+    height: 80px;
+  }
+
+  .hero-unit {
+    margin-top: 58px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 24pt;
+  }
+  h3.page-title {
+    text-align: left;
+  }
+  #donation-widgets {
+    width: auto;
+  }
+
+  div#paypal,
+  div#gittip {
+    display: block !important;
+    margin: 3px auto !important;
+  }
+}
