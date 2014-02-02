@@ -2,7 +2,7 @@
 
 > Currently under construction.
 
-## Installatio
+## Installation
 
     $ sudo make install
 
