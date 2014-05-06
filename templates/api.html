@@ -27,6 +27,35 @@
     <li><code>per_page</code>: <i>[number of items to be returned per request]</i> (default: 20)
 </ul>
 <h3>Endpoints</h3>
+<h4 class="api-class">Bill</h4>
+<table class="table">
+    <thead>
+        <th>Resource URL</th>
+        <th>Example response</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/v0.1/bill</td>
+            <td>
+                <a href="http://api.popong.com/v0.1/bill">http://api.popong.com/v0.1/blll/</a>
+                <pre>{% include 'api-example-bill.html' %}</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>/v0.1/bill/search</td>
+            <td>
+                <a href="http://api.popong.com/v0.1/bill/search?q=%EB%8D%B0%EC%9D%B4%ED%84%B0">http://api.popong.com/v0.1/bill/search?q=데이터</a>
+                <p>Same structure as above</p>
+            </td>
+        </tr>
+        <tr>
+            <td>/v0.1/bill/<i>[bill_number]</i></td>
+            <td>
+                <a href="http://api.popong.com/v0.1/bill/1906357">http://api.popong.com/v0.1/bill/1906357</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
 <h4 class="api-class">Person</h4>
 <table class="table">
     <thead>
@@ -81,35 +110,6 @@
             <td>/v0.1/party/<i>[party_number]</i></td>
             <td>
                 <a href="http://api.popong.com/v0.1/party/47">http://api.popong.com/v0.1/party/47</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h4 class="api-class">Bill</h4>
-<table class="table">
-    <thead>
-        <th>Resource URL</th>
-        <th>Example response</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>/v0.1/bill</td>
-            <td>
-                <a href="http://api.popong.com/v0.1/bill">http://api.popong.com/v0.1/blll/</a>
-                <pre>{% include 'api-example-bill.html' %}</pre>
-            </td>
-        </tr>
-        <tr>
-            <td>/v0.1/bill/search</td>
-            <td>
-                <a href="http://api.popong.com/v0.1/bill/search?q=%EB%8D%B0%EC%9D%B4%ED%84%B0">http://api.popong.com/v0.1/bill/search?q=데이터</a>
-                <p>Same structure as above</p>
-            </td>
-        </tr>
-        <tr>
-            <td>/v0.1/bill/<i>[bill_number]</i></td>
-            <td>
-                <a href="http://api.popong.com/v0.1/bill/1906357">http://api.popong.com/v0.1/bill/1906357</a>
             </td>
         </tr>
     </tbody>
