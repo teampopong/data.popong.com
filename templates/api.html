@@ -1,4 +1,3 @@
-<div class="container">
 <h2 id="api">Open API v0.1</h2>
 <h3>Common resource information</h3>
 <ul>
@@ -12,14 +11,14 @@
 <blockquote>
     Options with astericks are default values.
 </blockquote>
-<h4>List<h4>
+<h4>List</h4>
 <ul>
     <li><code>sort</code>: <i>[column name]</i>
     <li><code>order</code>: asc, desc*
     <li><code>page</code>: <i>[page number]</i> (default: 1)
     <li><code>per_page</code>: <i>[number of items to be returned per request]</i> (default: 20)
 </ul>
-<h4>Search<h4>
+<h4>Search</h4>
 <ul>
     <li><code>q</code> (mandatory): <i>[query]</i>
     <li><code>sort</code>: <i>[column name]</i>
@@ -28,15 +27,14 @@
     <li><code>per_page</code>: <i>[number of items to be returned per request]</i> (default: 20)
 </ul>
 <h3>Endpoints</h3>
+<h4 class="api-class">Person</h4>
 <table class="table">
     <thead>
-        <th></th>
         <th>Resource URL</th>
         <th>Example response</th>
     </thead>
     <tbody>
         <tr>
-            <th rowspan=3>Person</th>
             <td>/v0.1/person</td>
             <td>
                 <a href="http://api.popong.com/v0.1/person">http://api.popong.com/v0.1/person/</a>
@@ -56,8 +54,16 @@
                 <a href="http://api.popong.com/v0.1/person/1958194">http://api.popong.com/v0.1/person/1958194</a>
             </td>
         </tr>
+    </tbody>
+</table>
+<h4 class="api-class">Party</h4>
+<table class="table">
+    <thead>
+        <th>Resource URL</th>
+        <th>Example response</th>
+    </thead>
+    <tbody>
         <tr>
-            <th rowspan=3>Party</th>
             <td>/v0.1/party</td>
             <td>
                 <a href="http://api.popong.com/v0.1/party/?page=2">http://api.popong.com/v0.1/party/?page=2</a>
@@ -77,8 +83,16 @@
                 <a href="http://api.popong.com/v0.1/party/47">http://api.popong.com/v0.1/party/47</a>
             </td>
         </tr>
+    </tbody>
+</table>
+<h4 class="api-class">Bill</h4>
+<table class="table">
+    <thead>
+        <th>Resource URL</th>
+        <th>Example response</th>
+    </thead>
+    <tbody>
         <tr>
-            <th rowspan=3>Bill</th>
             <td>/v0.1/bill</td>
             <td>
                 <a href="http://api.popong.com/v0.1/bill">http://api.popong.com/v0.1/blll/</a>
@@ -103,4 +117,3 @@
 <h3>Source code</h3>
 <ul>
     <li>At <a href="https://github.com/teampopong/popong-api">Github</a></ul>
-</div>
