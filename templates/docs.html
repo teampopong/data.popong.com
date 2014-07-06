@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block contents %}
+<ul class="nav nav-tabs">
+    <li id="v0.1"><a href="v0.1">0.1</a></li>
+    <li id="v0.2"><a href="v0.2">0.2 (dev)</a></li>
+</ul>
+{% include 'versions/%s.html' % version %}
+
+<script>
+document.getElementById("{{ version }}").setAttribute("class", "active")
+</script>
+{% endblock %}

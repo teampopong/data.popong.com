@@ -1,7 +1,7 @@
 #! /usr/bin/python2.7
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, url_for
 from flask.ext.assets import Environment as Asset
 
 import settings
@@ -17,8 +17,15 @@ PopongBabel(app, **settings.BABEL)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', version=settings.LATEST_API_VERSION)
 
+@app.route('/api/')
+def api():
+    return redirect(url_for('docs', version=settings.LATEST_API_VERSION))
+
+@app.route('/api/<version>')
+def docs(version):
+    return render_template('docs.html', version=version)
 
 def cmd_args():
     from argparse import ArgumentParser

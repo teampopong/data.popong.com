@@ -11,3 +11,5 @@ SERVER = {
 BABEL = {
     'default_locale': 'ko',
 }
+
+LATEST_API_VERSION = 'v0.1'
