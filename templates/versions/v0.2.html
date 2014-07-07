@@ -1,4 +1,8 @@
 <h2 id="api">Open API v0.2</h2>
+<p class="alert alert-danger">
+  <b>Warning:</b> This version is currently in development.
+</p>
+
 <h3>Common resource information</h3>
 <ul>
     <li>Host: http://api.popong.com/
@@ -8,114 +12,7 @@
 </ul>
 
 <h3>Parameters</h3>
-<blockquote>
-    Options with astericks are default values.
-</blockquote>
-<h4>Common</h4>
-<p style="margin-left: 8px;">Every query should contain an API key. Now the only available API key is `test`.</p>
-<ul>
-    <li><code>api_key</code>: [Issued API key] (Since we don't have registration page yet, please use `test`)
-</ul>
-<h4>List</h4>
-<ul>
-    <li><code>sort</code>: <i>[column name]</i>
-    <li><code>order</code>: asc, desc*
-    <li><code>page</code>: <i>[page number]</i> (default: 1)
-    <li><code>per_page</code>: <i>[number of items to be returned per request]</i> (default: 20)
-</ul>
-<h4>Search</h4>
-<ul>
-    <li><code>q</code> (mandatory): <i>[query]</i>
-    <li><code>sort</code>: <i>[column name]</i>
-    <li><code>order</code>: asc, desc*
-    <li><code>page</code>: <i>[page number]</i> (default: 1)
-    <li><code>per_page</code>: <i>[number of items to be returned per request]</i> (default: 20)
-</ul>
+<p>TBD</p>
+
 <h3>Endpoints</h3>
-<h4 class="api-class">Bill</h4>
-<table class="table">
-    <thead>
-        <th>Resource URL</th>
-        <th>Example response</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>/v0.2/bill</td>
-            <td>
-                <a href="http://api.popong.com/v0.2/bill?api_key=test">http://api.popong.com/v0.2/bill/?api_key=test</a>
-            </td>
-        </tr>
-        <tr>
-            <td>/v0.2/bill/search</td>
-            <td>
-                <a href="http://api.popong.com/v0.2/bill/search?q=%EB%8D%B0%EC%9D%B4%ED%84%B0&api_key=test">http://api.popong.com/v0.2/bill/search?q=데이터&api_key=test</a>
-                <p>Same structure as above</p>
-            </td>
-        </tr>
-        <tr>
-            <td>/v0.2/bill/<i>[bill_number]</i></td>
-            <td>
-                <a href="http://api.popong.com/v0.2/bill/1906357?api_key=test">http://api.popong.com/v0.2/bill/1906357?api_key=test</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h4 class="api-class">Person</h4>
-<table class="table">
-    <thead>
-        <th>Resource URL</th>
-        <th>Example response</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>/v0.2/person</td>
-            <td>
-                <a href="http://api.popong.com/v0.2/person?api_key=test">http://api.popong.com/v0.2/person/?api_key=test</a>
-            </td>
-        </tr>
-        <tr>
-            <td>/v0.2/person/search</td>
-            <td>
-                <a href="http://api.popong.com/v0.2/person/search?q=박&api_key=test">http://api.popong.com/v0.2/person/search?q=박&api_key=test</a>
-                <p>Same structure as above</p>
-            </td>
-        </tr>
-        <tr>
-            <td>/v0.2/person/<i>[person_number]</i></td>
-            <td>
-                <a href="http://api.popong.com/v0.2/person/1958194?api_key=test">http://api.popong.com/v0.2/person/1958194?api_key=test</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h4 class="api-class">Party</h4>
-<table class="table">
-    <thead>
-        <th>Resource URL</th>
-        <th>Example response</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>/v0.2/party</td>
-            <td>
-                <a href="http://api.popong.com/v0.2/party/?page=2&api_key=test">http://api.popong.com/v0.2/party/?page=2&api_key=test</a>
-            </td>
-        </tr>
-        <tr>
-            <td>/v0.2/party/search</td>
-            <td>
-                <a href="http://api.popong.com/v0.2/party/search?q=민주&api_key=test">http://api.popong.com/v0.2/party/search?q=민주&api_key=test</a>
-                <p>Same structure as above</p>
-            </td>
-        </tr>
-        <tr>
-            <td>/v0.2/party/<i>[party_number]</i></td>
-            <td>
-                <a href="http://api.popong.com/v0.2/party/47?api_key=test">http://api.popong.com/v0.2/party/47?api_key=test</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h3>Source code</h3>
-<ul>
-    <li>At <a href="https://github.com/teampopong/popong-api">Github</a></ul>
+<p>TBD</p>
