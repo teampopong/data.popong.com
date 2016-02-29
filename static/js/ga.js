@@ -1,5 +1,5 @@
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-15347606-2']);
+_gaq.push(['_setAccount', 'UA-34495737-4']);
 _gaq.push(['_setDomainName', 'popong.com']);
 _gaq.push(['_trackPageview']);
 
