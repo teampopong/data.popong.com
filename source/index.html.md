@@ -14,6 +14,7 @@ includes:
   - authentication
   - batch
   - api-0.1
+  - api-0.2
 
 search: true
 ---
