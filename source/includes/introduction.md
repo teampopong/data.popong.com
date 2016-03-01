@@ -1,5 +1,16 @@
 # Introduction
 
+> data.popong.com의 도움으로 다음과 같은 서비스들이 탄생했습니다:
+>
+> - **2014**
+>     - [Watchbly](https://play.google.com/store/apps/details?id=kr.applepi.watchassembly): 국회의원 성적표, 토론, 청원, 프로필 등 다양한 기능의 서비스.
+>         [[facebook]](https://www.facebook.com/watchbly/)
+> - **2013**
+>     - [지켜본다](https://play.google.com/store/apps/details?id=org.sicamp.isee): 당신이 뽑은 정치인, 그 공약 잘 지키고 있는지 지켜보자.
+>         [[slides]](http://www.slideshare.net/daumfoundation/ss-28241165)
+>     - [대한민국 정치의 모든 것](http://pokr.kr): 대한민국 역대 국회의원, 의안, 회의록 데이터베이스.
+>     - [피드백 7](http://www.feedback7.com): 대통령, 장관, 국회의원 등이 투자 및 베팅의 대상이 되는 게임.
+
 현재 국회 홈페이지는 매일 새로 발의되는 의안 데이터를 수집하기 힘든 구조로 되어 있습니다.
 한 번에 처리되는 의안의 양도 많아서 사람이 일일이 다운로드 받고 분석하기에 번거롭습니다.
 또한, 의원 및 후보자 데이터에는 고유 식별자(ID)가 부여되어 있지 않아 동명이인 등을 처리하는데 어려움이 많습니다.
@@ -15,8 +26,6 @@
 저희는 이 데이터가 더 많은 시민들의 손에서 다루어질 때 가장 유용하게 쓰일 수 있고 빛이 날 것이라고 생각합니다.
 입법 데이터는 본디 시민의 것이기 때문입니다.
 이에, 연구 및 개발을 위한 데이터를 배포하니 많이 이용해주시기 바랍니다.
-
-> 위에서 선택된 언어로 API를 사용하는 법이 이렇게 표시됩니다.
 
 <aside class="warning">
 이곳의 모든 데이터는 <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> 라이센스 하에서, 출처를 <a href="http://data.popong.com">data.popong.com</a>로 명시하기만 하면 자유롭게 사용하실 수 있습니다.
