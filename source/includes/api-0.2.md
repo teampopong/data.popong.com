@@ -114,6 +114,7 @@ Parameter | Type | Required | Description
 api_key | string | true | Your API key.
 q | string | false | LIKE search for value in the `name` field.
 s | string | false | LIKE search for value in the `sponsor` field.
+assembly_id | string | false | Filter with the `assembly_id` field.
 sort | string | false | Column name to sort by.
 order | string | false | Sorting order. Can be set to either "asc" (ascending) or "desc" (descending). (default: desc)
 page | int | false | Page number for request. (default: 1)
