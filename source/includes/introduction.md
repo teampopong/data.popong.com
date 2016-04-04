@@ -3,6 +3,8 @@
 > data.popong.com의 데이터는 다음의 서비스들에 사용되었습니다:
 >
 > - **2015**
+>     - [kassembly.xyz](http://kassembly.xyz): 19대 국회 시각화 사이트.
+>         [[github]](https://github.com/hunkim/assembly)
 >     - [cywc](http://cywc.github.io/): 정재계 인맥/혼맥 DB.
 >         [[twitter]](https://twitter.com/cywcan)
 > - **2014**
