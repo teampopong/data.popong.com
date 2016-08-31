@@ -264,12 +264,12 @@ Same structure as above.
 ### Get a specific person
 
 ```shell
-curl "http://api.popong.com/v0.2/person/search?q=데이터&s=김영환&api_key=test"
+curl "http://api.popong.com/v0.1/person/19521114&api_key=test"
 ```
 
 ```python
 import requests
-requests.get("http://api.popong.com/v0.2/person/search?q=데이터&s=김영환&api_key=test")
+requests.get("http://api.popong.com/v0.1/person/19521114&api_key=test")
 ```
 
 #### HTTP Request
