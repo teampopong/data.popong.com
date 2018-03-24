@@ -1,0 +1,760 @@
+<h1 id="open-api-v0-1">Open API (v0.1)</h1>
+
+<h2 id="bill">Bill</h2>
+
+<h3 id="get-all-bills">Get all bills</h3>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.popong.com/v0.1/bill/?api_key=test"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.popong.com/v0.1/bill/?api_key=test"</span><span class="p">)</span>
+</code></pre>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code class="prettyprint">GET http://api.popong.com/v0.1/bill/</code></p>
+
+<h4 id="query-parameters">Query Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>string</td>
+<td>true</td>
+<td>Your API key.</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>false</td>
+<td>Column name to sort by.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>false</td>
+<td>Sorting order. Can be set to either &ldquo;asc&rdquo; (ascending) or &ldquo;desc&rdquo; (descending). (default: desc)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>false</td>
+<td>Page number for request. (default: 1)</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>false</td>
+<td>Number of items to be returned per request. (default: 20)</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+<code>api_key</code> 포함시키는 것, 잊지 않으셨죠?
+</aside>
+
+<h4 id="return-values">Return Values</h4>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"폐기"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"is_processed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"status_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"link_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRC_P1K2Z0L6A2U6V1P6N0C0R3L3E3N5T6"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"status_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">],</span><span class="w">
+            </span><span class="nt">"sponsor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"이명수의원 등 10인"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"decision_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-18"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1900326"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"proposed_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-06-26"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"고용정책 기본법 일부개정법률안"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"assembly_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"제안이유 및 주요내용 현행법 제7조제1항에서 ... 보장하고자 함(안 제41조제1항 신설)."</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"document_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://likms.assembly.go.kr/filegate/servlet/FileGate?bookId=787430CC-1342-113A-8AE6-9F243D90C0B3&amp;type=1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popong#bills"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Current status of the bill.</td>
+</tr>
+<tr>
+<td>is_processed</td>
+<td>Whether the bill is processed (처리) or not processed (계류).</td>
+</tr>
+<tr>
+<td>status_id</td>
+<td>Current status ID of the bill. The list of status IDs can be found <a href="https://github.com/teampopong/codebooks/#의안상태코드-bill-status-codes">here</a>.</td>
+</tr>
+<tr>
+<td>link_id</td>
+<td>The unique ID of the bill used in the National Assembly website. For example: <code class="prettyprint">http://likms.assembly.go.kr/bill/jsp/BillDetail.jsp?bill_id=&lt;link_id&gt;</code></td>
+</tr>
+<tr>
+<td>status_ids</td>
+<td>The list of statuses the bill goes through. The list of status IDs can be found <a href="https://github.com/teampopong/codebooks/#의안상태코드-bill-status-codes">here</a>.</td>
+</tr>
+<tr>
+<td>sponsor</td>
+<td>The sponsor and the total number of cosponsors.</td>
+</tr>
+<tr>
+<td>decision_date</td>
+<td>The final decision of the bill. Value should be <code class="prettyprint">null</code> if the bill is still processing.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Bill&rsquo;s unique ID, provided by the national assembly. You can also see the bill&rsquo;s info at: <code class="prettyprint">http://pokr.kr/bill/&lt;id&gt;</code>.</td>
+</tr>
+<tr>
+<td>proposed_date</td>
+<td>The proposed date of the bill.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Title of the bill.</td>
+</tr>
+<tr>
+<td>assembly_id</td>
+<td>The assembly the bill was proposed.</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>The summary of the bill. Can be <code class="prettyprint">null</code>.</td>
+</tr>
+<tr>
+<td>document_url</td>
+<td>URL of the bill&rsquo;s proposal PDF. Can be <code class="prettyprint">null</code>.</td>
+</tr>
+</tbody></table>
+
+<h3 id="search-bills">Search bills</h3>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.popong.com/v0.1/bill/search?q=데이터&amp;s=김영환&amp;api_key=test"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.popong.com/v0.1/bill/search?q=데이터&amp;s=김영환&amp;api_key=test"</span><span class="p">)</span>
+</code></pre>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code class="prettyprint">GET http://api.popong.com/v0.1/bill/search</code></p>
+
+<h4 id="query-parameters">Query Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>string</td>
+<td>true</td>
+<td>Your API key.</td>
+</tr>
+<tr>
+<td>q</td>
+<td>string</td>
+<td>false</td>
+<td>LIKE search for value in the <code class="prettyprint">name</code> field.</td>
+</tr>
+<tr>
+<td>s</td>
+<td>string</td>
+<td>false</td>
+<td>LIKE search for value in the <code class="prettyprint">sponsor</code> field.</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>false</td>
+<td>Column name to sort by.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>false</td>
+<td>Sorting order. Can be set to either &ldquo;asc&rdquo; (ascending) or &ldquo;desc&rdquo; (descending). (default: desc)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>false</td>
+<td>Page number for request. (default: 1)</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>false</td>
+<td>Number of items to be returned per request. (default: 20)</td>
+</tr>
+</tbody></table>
+
+<h4 id="return-values">Return Values</h4>
+
+<p>Same structure as above.</p>
+
+<h3 id="get-a-specific-bill">Get a specific bill</h3>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.popong.com/v0.1/bill/152445?api_key=test"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.popong.com/v0.1/bill/152445?api_key=test"</span><span class="p">)</span>
+</code></pre>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code class="prettyprint">GET http://api.popong.com/v0.1/bill/&lt;id&gt;</code></p>
+
+<h4 id="url-parameters">URL Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>The unique ID of the bill to retrieve.</td>
+</tr>
+</tbody></table>
+
+<h4 id="query-parameters">Query Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>string</td>
+<td>true</td>
+<td>Your API key.</td>
+</tr>
+</tbody></table>
+
+<h4 id="return-values">Return Values</h4>
+
+<p>Same structure as above.</p>
+
+<h2 id="person">Person</h2>
+
+<h3 id="get-all-people">Get all people</h3>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.popong.com/v0.1/person/?api_key=test"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.popong.com/v0.1/person/?api_key=test"</span><span class="p">)</span>
+</code></pre>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code class="prettyprint">GET http://api.popong.com/v0.1/person/</code></p>
+
+<h4 id="query-parameters">Query Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>string</td>
+<td>true</td>
+<td>Your API key.</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>false</td>
+<td>Column name to sort by.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>false</td>
+<td>Sorting order. Can be set to either &ldquo;asc&rdquo; (ascending) or &ldquo;desc&rdquo; (descending). (default: desc)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>false</td>
+<td>Page number for request. (default: 1)</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>false</td>
+<td>Number of items to be returned per request. (default: 20)</td>
+</tr>
+</tbody></table>
+
+<h4 id="return-values">Return Values</h4>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"wiki"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/wiki/%EB%B0%95%EC%98%81%EC%84%A0_(1960%EB%85%84)"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"address_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"11"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11170"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"박영선"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Park_Youngsun"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.assembly.go.kr/photo/9770347.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name_cn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"朴映宣"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"blog"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://blog.naver.com/dolphin6010"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1960-01-22"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parkys21"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"서울 구로구 신도림로19길"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name_en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARK Young-sun"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"education"</span><span class="p">:</span><span class="w"> </span><span class="s2">"서강대학교 언론대학원 졸업(문학석사)"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.pys21.net"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1960211</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"education_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"7001818"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popong#people"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wiki</td>
+<td>URL path for person in the Korean Wikipedia. For example: <code class="prettyprint">http://ko.wikipedia.org/wiki/%EC%86%90%ED%95%99%EA%B7%9C</code>.</td>
+</tr>
+<tr>
+<td>address_id</td>
+<td>Administrative address IDs of the person in three levels: provinces (시도), municipalities (시군구), submunicipalities (읍면동). <code class="prettyprint">null</code> if value is unknown. Address IDs can be seen <a href="https://github.com/teampopong/codebooks/#지역코드-region-codes">here</a>.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the person in Hangul.</td>
+</tr>
+<tr>
+<td>twitter</td>
+<td>Twitter handle of the person. For example: <code class="prettyprint">http://twitter.com/&lt;twitter&gt;</code>.</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>Gender of the person. Either &ldquo;m&rdquo; (male) or &ldquo;f&rdquo; (female).</td>
+</tr>
+<tr>
+<td>image</td>
+<td>URL for an image of the person. Mostly from <code class="prettyprint">www.assembly.go.kr</code> or <code class="prettyprint">data.popong.com</code>.</td>
+</tr>
+<tr>
+<td>name_cn</td>
+<td>Name of the person in Chinese characters.</td>
+</tr>
+<tr>
+<td>blog</td>
+<td>URL for the person&rsquo;s blog.</td>
+</tr>
+<tr>
+<td>birthday</td>
+<td>Birthday of the person in the format: &ldquo;%Y-%m-%d&rdquo;.</td>
+</tr>
+<tr>
+<td>facebook</td>
+<td>Facebook handle of the person. For example: <code class="prettyprint">http://facebook.com/&lt;facebook&gt;</code>.</td>
+</tr>
+<tr>
+<td>address</td>
+<td>Address of the person.</td>
+</tr>
+<tr>
+<td>name_en</td>
+<td>Name of the person in Alphabets.</td>
+</tr>
+<tr>
+<td>education</td>
+<td>Person&rsquo;s last attended educational institute.</td>
+</tr>
+<tr>
+<td>homepage</td>
+<td>URL of the person&rsquo;s homepage.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Person&rsquo;s unique ID, provided by Team POPONG. Consisted of the birth year of the person and a random number. You can also see the person&rsquo;s info at: <code class="prettyprint">http://pokr.kr/person/&lt;id&gt;</code>.</td>
+</tr>
+<tr>
+<td>education_id</td>
+<td>The ID list of the educational institutes the person attended. The list of educational institute IDs can be found <a href="https://github.com/teampopong/codebooks/#고등교육기관코드-institution-codes">here</a></td>
+</tr>
+</tbody></table>
+
+<h3 id="search-people">Search people</h3>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.popong.com/v0.1/person/search?q=박&amp;api_key=test"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.popong.com/v0.1/person/search?q=박&amp;api_key=test"</span><span class="p">)</span>
+</code></pre>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code class="prettyprint">GET http://api.popong.com/v0.1/person/search</code></p>
+
+<h4 id="query-parameters">Query Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>string</td>
+<td>true</td>
+<td>Your API key.</td>
+</tr>
+<tr>
+<td>q</td>
+<td>string</td>
+<td>false</td>
+<td>LIKE search for value in the <code class="prettyprint">name</code> field.</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>false</td>
+<td>Column name to sort by.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>false</td>
+<td>Sorting order. Can be set to either &ldquo;asc&rdquo; (ascending) or &ldquo;desc&rdquo; (descending). (default: desc)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>false</td>
+<td>Page number for request. (default: 1)</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>false</td>
+<td>Number of items to be returned per request. (default: 20)</td>
+</tr>
+</tbody></table>
+
+<h4 id="return-values">Return Values</h4>
+
+<p>Same structure as above.</p>
+
+<h3 id="get-a-specific-person">Get a specific person</h3>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.popong.com/v0.1/person/19521114&amp;api_key=test"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.popong.com/v0.1/person/19521114&amp;api_key=test"</span><span class="p">)</span>
+</code></pre>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code class="prettyprint">GET http://api.popong.com/v0.1/person/&lt;id&gt;</code></p>
+
+<h4 id="url-parameters">URL Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>The unique ID of the person to retrieve.</td>
+</tr>
+</tbody></table>
+
+<h4 id="query-parameters">Query Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>string</td>
+<td>true</td>
+<td>Your API key.</td>
+</tr>
+</tbody></table>
+
+<h4 id="return-values">Return Values</h4>
+
+<p>Same structure as above.</p>
+
+<h2 id="party">Party</h2>
+
+<h3 id="get-all-parties">Get all parties</h3>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.popong.com/v0.1/party/?api_key=test"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.popong.com/v0.1/party/?api_key=test"</span><span class="p">)</span>
+</code></pre>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code class="prettyprint">GET http://api.popong.com/v0.1/party/</code></p>
+
+<h4 id="query-parameters">Query Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>string</td>
+<td>true</td>
+<td>Your API key.</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>false</td>
+<td>Column name to sort by.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>false</td>
+<td>Sorting order. Can be set to either &ldquo;asc&rdquo; (ascending) or &ldquo;desc&rdquo; (descending). (default: desc)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>false</td>
+<td>Page number for request. (default: 1)</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>false</td>
+<td>Number of items to be returned per request. (default: 20)</td>
+</tr>
+</tbody></table>
+
+<h4 id="return-values">Return Values</h4>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://data.popong.com/parties/images/83.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">163</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"자유선진당"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popong#parties"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>color</td>
+<td>HEX value for the party color.</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>URL for the party&rsquo;s logo.</td>
+</tr>
+<tr>
+<td>size</td>
+<td>Number of members in the party.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Unique ID of the party, provided by Team POPONG. The list of party IDs can be seen <a href="https://github.com/teampopong/codebooks/#정당코드-party-codes">here</a>.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the party.</td>
+</tr>
+</tbody></table>
+
+<h3 id="search-parties">Search parties</h3>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.popong.com/v0.1/party/search?q=통합&amp;api_key=test"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.popong.com/v0.1/party/search?q=통합&amp;api_key=test"</span><span class="p">)</span>
+</code></pre>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code class="prettyprint">GET http://api.popong.com/v0.1/party/search</code></p>
+
+<h4 id="query-parameters">Query Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>string</td>
+<td>true</td>
+<td>Your API key.</td>
+</tr>
+<tr>
+<td>q</td>
+<td>string</td>
+<td>false</td>
+<td>LIKE search for value in the <code class="prettyprint">name</code> field.</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>false</td>
+<td>Column name to sort by.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>false</td>
+<td>Sorting order. Can be set to either &ldquo;asc&rdquo; (ascending) or &ldquo;desc&rdquo; (descending). (default: desc)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>false</td>
+<td>Page number for request. (default: 1)</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>false</td>
+<td>Number of items to be returned per request. (default: 20)</td>
+</tr>
+</tbody></table>
+
+<h4 id="return-values">Return Values</h4>
+
+<p>Same structure as above.</p>
+
+<h3 id="get-a-specific-party">Get a specific party</h3>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.popong.com/v0.1/party/&lt;id&gt;?api_key=test"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.popong.com/v0.1/party/&lt;id&gt;?api_key=test"</span><span class="p">)</span>
+</code></pre>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code class="prettyprint">GET http://api.popong.com/v0.1/party/&lt;id&gt;</code></p>
+
+<h4 id="url-parameters">URL Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>The unique ID of the person to retrieve.</td>
+</tr>
+</tbody></table>
+
+<h4 id="query-parameters">Query Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>string</td>
+<td>true</td>
+<td>Your API key.</td>
+</tr>
+</tbody></table>
+
+<h4 id="return-values">Return Values</h4>
+
+<p>Same structure as above.</p>
